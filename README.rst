@@ -4,47 +4,49 @@ votable2sql
 Setup
 -----
 
-```
-pip install git+https://github.com/aipescience/votable2sql
-```
+.. code:: bash
+
+    pip install git+https://github.com/aipescience/votable2sql
+
 
 Usage
 -----
 
-```bash
-usage: votable2sql [-h] [-o OUTPUT] [-d DIALECT] [-s SKIP] [--schema SCHEMA]
-                   [--table TABLE]
-                   votable
+.. code:: bash
 
-Tool to convert VOTables into SQL dumps
+    usage: votable2sql [-h] [-o OUTPUT] [-d DIALECT] [-s SKIP] [--schema SCHEMA]
+                       [--table TABLE]
+                       votable
 
-positional arguments:
-  votable               VOTable file to be processed
+    Tool to convert VOTables into SQL dumps
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -o OUTPUT, --output OUTPUT
-                        Output file [default: STDOUT]
-  -d DIALECT, --dialect DIALECT
-                        SQL dialect, e.g. sql, mysql [default: sql]
-  -s SKIP, --skip SKIP  Skip column
-  --schema SCHEMA       Schema to use
-  --table TABLE         Table to use
-```
+    positional arguments:
+      votable               VOTable file to be processed
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      -o OUTPUT, --output OUTPUT
+                            Output file [default: STDOUT]
+      -d DIALECT, --dialect DIALECT
+                            SQL dialect, e.g. sql, mysql [default: sql]
+      -s SKIP, --skip SKIP  Skip column
+      --schema SCHEMA       Schema to use
+      --table TABLE         Table to use
+
 
 Examples
 --------
 
-```bash
-# writes the sql dump to STDOUT
-votable2sql test.votable.xml
+.. code:: bash
 
-# writes the sql dump to test.sql
-votable2sql test.votable.xml -o test.sql
+    # writes the sql dump to STDOUT
+    votable2sql test.votable.xml
 
-# writes a MySQL dump
-votable2sql test.votable.xml -d mysql
+    # writes the sql dump to test.sql
+    votable2sql test.votable.xml -o test.sql
 
-# writes a MySQL dump skipping `vx`, `vy` and `vz`
-votable2sql test.votable.xml -d mysql -s vx -s vy -s vz
-```
+    # writes a MySQL dump
+    votable2sql test.votable.xml -d mysql
+
+    # writes a MySQL dump skipping `vx`, `vy` and `vz`
+    votable2sql test.votable.xml -d mysql -s vx -s vy -s vz
