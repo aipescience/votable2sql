@@ -2,7 +2,7 @@ import re
 
 from setuptools import setup
 
-with open('votable2sql.py') as f:
+with open('votable_to_sql/__init__.py') as f:
     metadata = dict(re.findall(r'__(.*)__ = [\']([^\']*)[\']', f.read()))
 
 setup(
@@ -28,6 +28,7 @@ setup(
         'Topic :: Scientific/Engineering :: Astronomy'
     ],
     entry_points={
-        'console_scripts': 'votable2sql=votable2sql:main'
-    }
+        'console_scripts': 'votable2sql=votable_to_sql:main'
+    },
+    packages=['votable_to_sql']
 )
