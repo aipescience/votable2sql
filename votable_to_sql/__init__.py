@@ -117,7 +117,7 @@ def field_string(engine, field):
 
 
 def values_string(engine, fields, row):
-    return '(%s)' % ', '.join(str(row[i]) for i, _ in fields)
+    return '(%s)' % ', '.join(unicode(row[i]) for i, _ in fields)
 
 
 if __name__ == "__main__":
